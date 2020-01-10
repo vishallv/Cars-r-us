@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .navbar-brand {
+            /* font-style: italic; */
+            font-size: 30px;
+        }
+
+        .space {
+            font-size: 20px;
+            margin-left: 60%;
+        }
+
+        li {
+            margin: 0px 12px;
+        }
+
+        .book-car {
+            width: 50%;
+            height: 200px;
+            /* background-color: red; */
+            margin-left: 100px;
+
+        }
+
+        a {
+            color: white;
+        }
+
+        img {
+            width: 80%;
+            margin-left: 8%;
+        }
+
+        input {
+            display: block;
+            margin: 10px;
+
+        }
+
+        .book-info,
+        .book-car {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        h3 {
+            margin-top: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cars'R'us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse space" id="navbarNav">
+            {% if request.session.uid %}
+            <!-- <li class="nav-item ">
+                                <a class="nav-link" href="#">List your Car <span class="sr-only">(current)</span></a>
+                            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="/yourtrip">Your Trip</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+
+            {% else %}
+            <li class="nav-item ">
+                <a class="nav-link" href="#">List your Car <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+
+            {% endif %}
+        </div>
+    </nav>
+    <h1>Book the car</h1>
+
+    <div class="book-car">
+        <img src="{{ car.image.url }}" alt="">
+    </div>
+
+
+
+    <div class="book-info">
+
+
+        <form action="/bookthiscar" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="lister_id" value="{{car.id}}">
+            Start Date: <input type="date" name="start_date">
+            End Date: <input type="date" name="end_date">
+            <button type="submit" class="btn btn-primary">Book Now</button>
+
+        </form>
+
+
+    </div>
+
+    <h3>Host Information</h3>
+    <p>Owner : {{car.first_name}}</p>
+    <p>Car price : {{car.rental_price}}/day</p>
+
+
+
+
+</body>
+
+</html>

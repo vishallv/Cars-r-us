@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .navbar-brand {
+            /* font-style: italic; */
+            font-size: 30px;
+        }
+
+        .space {
+            font-size: 20px;
+            margin-left: 60%;
+        }
+
+        li {
+            margin: 0px 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cars'R'us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse space" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/yourtrip">Your Trip</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <h1>Book a Car</h1>
+
+    <form action="/search" method="POST">
+        {% csrf_token%}
+
+        Location : <input type="text" name="location" id="">
+        Dates: <input type="date" name="start_date" id="">
+        Number Of Seats : <input type="text" name="seats" id="">
+        <input type="submit" value="Search" class="btn btn-success">
+
+    </form>
+
+</body>
+
+</html>

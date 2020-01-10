@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+              .navbar-brand {
+            /* font-style: italic; */
+            font-size: 30px;
+        }
+
+        .space {
+            font-size: 20px;
+            margin-left: 60%;
+        }
+
+        li {
+            margin: 0px 12px;
+        }
+        input{
+            display: block;
+        }
+        .registerlister,.loginlister{
+            
+            display: inline-block;
+            vertical-align: top
+        }
+        .loginlister{
+            margin-left: 20%;
+        }
+        </style>
+    </head>
+    <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="/">Cars'R'us</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse space" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">List your Car <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/signup">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+            
+                        </ul>
+                    </div>
+                </nav>
+
+                <h1>Lister</h1>
+
+                <div class="registerlister">
+
+                    <form action="/registerlister" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        First Name: <input type="text" name="first_name" >
+                        Last Name: <input type="text" name="last_name" >
+                        Email: <input type="text" name="email" >
+                        Password: <input type="password" name="password" >
+                        Address: <input type="text" name="address" >
+                        Location: <input type="text" name="location" >
+                        Car: <input type="text" name="car_type" >
+                        Model: <input type="text" name="car_model" >
+                        Rental Price: <input type="text" name="rental_price" >
+                        Car Image : <input type="file" name="car_image" id="">
+                        <!-- Image of Car: <input type="text" name="" id=""> -->
+                        <input type="submit"  value="Register" class="btn btn-success">
+                    </form>
+                </div>
+                <div class="loginlister">
+
+                        <form action="/loglister" method="POST">
+                            {% csrf_token %}
+                
+                            Email: <input type="text" name="email" >
+                            Password: <input type="password" name="password" >
+                           
+                            <input type="submit" value="Login" class="btn btn-success" name="" >
+                        </form>
+                    </div>
+        
+    
+    </body>
+</html>

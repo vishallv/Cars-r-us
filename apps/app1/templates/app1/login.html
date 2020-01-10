@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    /* .container{
+        width: 100%;
+        margin: 0px;
+        text-align: center;
+    } */
+    .lister,.user{
+        display: inline-block;
+        vertical-align: top;
+        width: 35%;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 15px;
+        padding: 2%;
+        margin: 100px;
+
+    }
+    nav {
+            /* height: 70px; */
+
+        }
+
+        .navbar-brand {
+            /* font-style: italic; */
+            font-size: 30px;
+        }
+
+        .space {
+            font-size: 20px;
+            margin-left: 60%;
+        }
+
+        li {
+            margin: 0px 12px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+
+        }
+
+    
+    </style>
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Cars'R'us</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse space" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">List your Car <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+        
+                    </ul>
+                </div>
+            </nav>
+
+    <!-- <div class="container"> -->
+
+        <div class="lister">
+            <h1>Sign In as Lister</h1>
+            <p>Easy Hosting</p>
+            <p>effortlesss earning</p>
+
+            <Button class="btn btn-primary"><a href="/listerLogReg">Sign In as lister</a> </Button>
+
+        </div>
+
+        <div class="user">
+                <h1>Sign In to rent</h1>
+                <p>Easy Rental</p>
+                <p>Unlimited car option</p>
+    
+                <Button class="btn btn-primary"> <a href="/userLogReg">Sign In to rent</a> </Button>
+    
+            </div>
+
+
+    <!-- </div> -->
+
+</body>
+
+</html>
